@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="shankai.top, shankai, shanankai, shananankai, shanananankai"/>
+  <meta name="keywords" content="shankai.top, shankai, shanankai, shananankai, shanananankai"/>
+  <link rel="icon" href="http://qiniuyun.shankai.top/shankai_ico.ico">
+  
+  <title>shanananankai</title>
+  <!-- 引入Vue -->
+  <script src="js/vue.js"></script>
+  <!-- 引入样式 -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+  <!-- 引入组件库 -->
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+<body>
+<div id="home">
+  <el-container>
+    <el-main>
+      <el-tabs v-model="activeName" type="card">
+        <el-tab-pane label="我的主页" name="1">
+          <div class="father-box">
+            <div class="child-box">
+              <div style="margin: 70px auto 50px;text-align: center;">
+                <el-image
+                  style="width: 300px; height: 300px;border-radius: 150px;"
+                  :src="face"
+                  fit="cover">
+                </el-image>
+              </div>
+              <div class="title" style="position: relative;">
+                <div><a href="javascript:;" @click="tab_type = 1">自我介紹</a></div>
+                <div><a href="javascript:;" @click="tab_type = 2">个人作品 ①</a></div>
+                <div><a href="javascript:;" @click="tab_type = 3">个人作品 ②</a></div>
+                <div><a href="javascript:;" @click="tab_type = 4">职业技能</a></div>
+                <div><a href="javascript:;" @click="tab_type = 5">技术栈</a></div>
+                <el-popover
+                  placement="bottom"
+                  title="页面介绍"
+                  width="200"
+                  trigger="click"
+                  content="当前页面采用MVVM模式，主要使用Vue + Element-UI 组件化搭建。">
+                  <i slot="reference" class="el-icon-info" style="color: #fff;position: absolute;right: 40px;top: -405px;font-size: 20px"></i>
+                </el-popover>
+              </div>
+              <div style="clear: both"></div>
+              <div class="tab1-class" style="text-indent: 0em;color: white;" v-if="tab_type == 1">
+                <p>
+                  1年PHP开发经验，曾在国内高新科技公司担任PHP开发工程师，主要负责为台湾foodomo外卖点餐平台的后台功能开发，在职期间多次同时接手多个项目，包括但不限于数据接口，后台功能模块，前端等的组件开发。
+                </p>
+                <p>对网站的前后端数据交互有一定的知识认知，可独自完成前后端开发工作和数据对接。</p>
+              </div>
+              <div class="tab2-class" v-if="tab_type == 2">
+                <i class="el-icon-paperclip" style="color: #fff"></i>&nbsp;<a href="http://wd.shankai.top" target="_blank">原生PHP5.6-企业站</a><br>
+                <i class="el-icon-paperclip" style="color: #fff"></i>&nbsp;<a href="http://jinhongji.shankai.top" target="_blank">原生PHP7.2-混合APP</a><br>
+                <i class="el-icon-paperclip" style="color: #fff"></i>&nbsp;<a href="http://ci.shankai.top" target="_blank">CI框架-播客项目</a><br>
+                <br>
+                <span>注:(此处项目全部由个人独立开发,部分在工作中的项目无法进行展示,敬请谅解!)</span>
+               </div>
+              <div class="tab2-class" v-if="tab_type == 3">
+                <i class="el-icon-paperclip" style="color: #fff"></i>&nbsp;<a href="http://wq.shankai.top/" target="_blank">微擎</a><br>
+                <i class="el-icon-paperclip" style="color: #fff"></i>&nbsp;<a href="http://book.shankai.top/" target="_blank">爬虫</a><br>
+                <i class="el-icon-paperclip" style="color: #fff"></i>&nbsp;<a href="http://ng.shankai.top/admin/#!/admin/food" target="_blank">angular 后台项目</a><br>
+                <br>
+                <span>注:(此处项目全部由个人独立开发,部分在工作中的项目无法进行展示,敬请谅解!)</span>
+              </div>
+              <div class="tab2-class" v-if="tab_type == 4">
+                ①  理解PHP面向对象开发，并能应用常用数据结构<br>
+                ②  熟练使用Laravel框架， 对中间件,  缓存,  队列,  有一定的使用经验<br>
+                ③  应用和操作Mysql，Redis数据库，对Mysql优化有一定的处理能力<br>
+                ④  熟练操作与配置LNMP开发环境, 习惯用Liunx进行开发, 能编写一定难度的Shell脚本<br>
+                ⑤  掌握Html, Css, Js基础, 能使用前端主流框架, Vue, AngularJS, Node.JS等进行前端开发<br>
+                ⑥  熟悉Git和SVN等版本控制器的配置与安装<br>
+              </div>
+              <div class="tab2-class" v-if="tab_type == 5">
+                <el-row style="margin-bottom: 20px;">
+                  <el-col :span="3">
+                    <div style="text-align: center;line-height: 18px">HTML：</div>
+                  </el-col>
+                  <el-col :span="9">
+                    <el-progress :text-inside="true" :stroke-width="20" :percentage="94" status="success"></el-progress>
+                  </el-col>
+                  <el-col :span="3">
+                    <div style="text-align: center;line-height: 18px">PHP：</div>
+                  </el-col>
+                  <el-col :span="9">
+                    <el-progress :text-inside="true" :stroke-width="20" :percentage="94" status="success"></el-progress>
+                  </el-col>
+                </el-row>
+                <el-row style="margin-bottom: 20px;">
+                  <el-col :span="3">
+                    <div style="text-align: center;line-height: 18px">CSS：</div>
+                  </el-col>
+                  <el-col :span="9">
+                    <el-progress :text-inside="true" :stroke-width="20" :percentage="92" status="success"></el-progress>
+                  </el-col>
+                  <el-col :span="3">
+                    <div style="text-align: center;line-height: 18px">Mysql：</div>
+                  </el-col>
+                  <el-col :span="9">
+                    <el-progress :text-inside="true" :stroke-width="20" :percentage="92" status="success"></el-progress>
+                  </el-col>
+                </el-row>
+                <el-row style="margin-bottom: 20px;">
+                  <el-col :span="3">
+                    <div style="text-align: center;line-height: 18px">JS：</div>
+                  </el-col>
+                  <el-col :span="9">
+                    <el-progress :text-inside="true" :stroke-width="20" :percentage="82"></el-progress>
+                  </el-col>
+                  <el-col :span="3">
+                    <div style="text-align: center;line-height: 18px">Nginx：</div>
+                  </el-col>
+                  <el-col :span="9">
+                    <el-progress :text-inside="true" :stroke-width="20" :percentage="88" ></el-progress>
+                  </el-col>
+                </el-row>
+                <el-row style="margin-bottom: 20px;">
+                  <el-col :span="3">
+                    <div style="text-align: center;line-height: 18px">Vue：</div>
+                  </el-col>
+                  <el-col :span="9">
+                    <el-progress :text-inside="true" :stroke-width="20" :percentage="92" status="success"></el-progress>
+                  </el-col>
+                  <el-col :span="3">
+                    <div style="text-align: center;line-height: 18px">Linux：</div>
+                  </el-col>
+                  <el-col :span="9">
+                    <el-progress :text-inside="true" :stroke-width="20" :percentage="94" status="success"></el-progress>
+                  </el-col>
+                </el-row>
+                <el-row style="margin-bottom: 20px;">
+                  <el-col :span="3">
+                    <div style="text-align: center;line-height: 18px">AngularJS：</div>
+                  </el-col>
+                  <el-col :span="9">
+                    <el-progress :text-inside="true" :stroke-width="20" :percentage="77" status="warning"></el-progress>
+                  </el-col>
+                  <el-col :span="3">
+                    <div style="text-align: center;line-height: 18px">Laravel：</div>
+                  </el-col>
+                  <el-col :span="9">
+                    <el-progress :text-inside="true" :stroke-width="20" :percentage="90" status="success"></el-progress>
+                  </el-col>
+                </el-row>
+                <el-row style="margin-bottom: 20px;">
+                  <el-col :span="3">
+                    <div style="text-align: center;line-height: 18px">Node.js：</div>
+                  </el-col>
+                  <el-col :span="9">
+                    <el-progress :text-inside="true" :stroke-width="20" :percentage="70" status="warning"></el-progress>
+                  </el-col>
+                  <el-col :span="3">
+                    <div style="text-align: center;line-height: 18px">TP3：</div>
+                  </el-col>
+                  <el-col :span="9">
+                    <el-progress :text-inside="true" :stroke-width="20" :percentage="79" status="warning"></el-progress>
+                  </el-col>
+                </el-row>
+              </div>
+            </div>
+          </div>
+        </el-tab-pane>
+        <el-tab-pane label="求职简历" name="2">
+          <div class="father-box">
+            <div class="child-box">
+              <div style="text-align: center;">
+                <el-image :src="resume" style="width: 70%;margin-top: 20px"></el-image>
+              </div>
+            </div>
+          </div>
+        </el-tab-pane>
+        <el-tab-pane label="摄影作品" name="3">
+          <div class="father-box">
+            <div class="child-box">
+              <div style="text-align: center;">
+                <div style="height: 20px;"></div>
+                <el-image v-for="(item,key) in photographyList" :key="key" :src="item" style="width: 70%;margin-bottom: 20px"></el-image>
+              </div>
+            </div>
+          </div>
+        </el-tab-pane>
+        <el-tab-pane label="获得证书" name="4">
+          <div class="father-box">
+            <div class="child-box">
+              <div style="text-align: center;">
+                <div style="height: 20px;"></div>
+                <el-image v-for="(item,key) in certificateList" :key="key" :src="item" style="width: 70%;margin-bottom: 20px"></el-image>
+              </div>
+            </div>
+          </div>
+        </el-tab-pane>
+      </el-tabs>
+    </el-main>
+    <el-footer>
+      <a target="_blank" href="http://www.miitbeian.gov.cn/" style="color: #999;font-size: 10px;">粤ICP备18135239号</a>
+      <div style="height: 20px;"></div>
+      <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010502001173" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="img/备案图标.png" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">粤公网安备 44010502001173号</p></a>
+    </el-footer>
+  </el-container>
+</div>
+</body>
+<script>
+  new Vue({
+    el: "#home",
+    data () {
+      return {
+        tab_type: 1,
+        activeName: '1',
+        face:"http://qiniuyun.shankai.top/face2.jpeg",
+        resume:"http://qiniuyun.shankai.top/殷善开简历.png",
+        photographyList: [
+          'http://qiniuyun.shankai.top/4.webp',
+          'http://qiniuyun.shankai.top/6.webp',
+          'http://qiniuyun.shankai.top/3.webp',
+          'http://qiniuyun.shankai.top/5.webp',
+          'http://qiniuyun.shankai.top/1.webp',
+          'http://qiniuyun.shankai.top/2.webp',
+          'http://qiniuyun.shankai.top/7.webp',
+        ],
+        certificateList: [
+          'http://qiniuyun.shankai.top/学位.jpg',
+          'http://qiniuyun.shankai.top/毕业.jpg',
+          'http://qiniuyun.shankai.top/Mysql二级.webp',
+          'http://qiniuyun.shankai.top/Web二级.webp',
+          'http://qiniuyun.shankai.top/大广赛证书.jpg',
+        ]
+      }
+    },
+    created () {
+    },
+    methods: {
+      
+    }
+  });
+</script>
+<style>
+  body{
+    margin: 0;
+    background-color: #21242B;
+  }
+  .el-main {
+    padding: 0;
+    /*height: 900px;*/
+  }
+  .el-main::-webkit-scrollbar {
+    display:none
+  }
+  .el-footer{
+    text-align: center;
+    height: 80px !important;
+    margin-top: 120px;
+  }
+  .el-tabs--card>.el-tabs__header{
+    border-bottom: none;
+  }
+  .el-tabs--card>.el-tabs__header .el-tabs__nav{
+    border: none;
+    text-align: center
+  }
+  .el-tabs__nav{
+    float: none;
+  }
+  .el-tabs--card>.el-tabs__header .el-tabs__item{
+    border: none;
+  }
+  .el-tabs__header{
+    margin: 0;
+  }
+  .el-tabs__item{
+    height: 60px;
+    line-height: 60px;
+    color: #A0A0A0;
+    margin-right: 30px;
+  }
+  .el-tabs__item.is-active {
+    color: #fff;
+    border-radius: 5px;
+  }
+  .el-tabs__item:hover {
+    color: #fff;
+  }
+  .father-box{
+    margin-top: 1px;border-top:1px solid #000;
+  }
+  .child-box{
+    border-top:1px solid #3C3F46;
+  }
+  .title{
+    width: 880px;
+    margin: 0 auto;
+  }
+  .title div a{
+    color: #fff;text-decoration:none;
+    float: left;width: 150px;height: 55px;
+    border: 2px solid #666;border-radius: 20px;
+    text-align: center;color:#fff;line-height: 55px;
+    background:#0E0E10;margin: 0 20px 0 0;
+  }
+  .tab1-class{
+    width: 880px;
+    height: 260px;
+    margin: 0 auto;
+    color: #fff;
+    text-indent: 2em;
+    margin-top: 30px;
+    font-size: 18px;
+    font-family: 微软雅黑;
+    line-height: 32px;
+  }
+  .tab2-class{
+    width: 880px;
+    height: 260px;
+    margin: 0 auto;
+    color: white;
+    text-indent: 0em;
+    margin-top: 30px;
+    font-size: 18px;
+    font-family: 微软雅黑;
+    line-height: 34px;
+  }
+  .tab2-class a{
+    color: #fff;
+  }
+  .scrollbar::-webkit-scrollbar {
+    display:none
+  }
+</style>
+</html>
