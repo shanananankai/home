@@ -23,7 +23,7 @@
   <el-container v-cloak>
     <el-main>
       <el-tabs v-model="activeName" type="card">
-        <el-tab-pane label="我的主页" name="1">
+        <el-tab-pane label="我的主页" name="我的主页">
           <div class="father-box">
             <div class="child-box">
               <div style="margin: 70px auto 50px;text-align: center;">
@@ -50,10 +50,9 @@
               </div>
               <div style="clear: both"></div>
               <div class="tab1-class" style="text-indent: 0em;color: white;" v-if="tab_type == 1">
-                <p>
-                  1年PHP开发经验，曾在国内高新科技公司担任PHP开发工程师，主要负责为台湾foodomo外卖点餐平台的后台功能开发，在职期间多次同时接手多个项目，包括但不限于数据接口，后台功能模块，前端等的组件开发。
+                <p v-for="(descript,key) in descriptList" :key="key">
+                  {{descript}}
                 </p>
-                <p>对网站的前后端数据交互有一定的知识认知，可独自完成前后端开发工作和数据对接。</p>
               </div>
               <div class="tab2-class" v-if="tab_type == 2">
                 <i class="el-icon-paperclip" style="color: #fff"></i>&nbsp;<a href="http://wd.shankai.top" target="_blank">原生PHP5.6-企业站</a><br>
@@ -166,7 +165,7 @@
             </div>
           </div>
         </el-tab-pane>
-        <el-tab-pane label="求职简历" name="2">
+        <el-tab-pane label="求职简历" name="求职简历">
           <div class="father-box">
             <div class="child-box">
               <div style="text-align: center;">
@@ -175,7 +174,7 @@
             </div>
           </div>
         </el-tab-pane>
-        <el-tab-pane label="摄影作品" name="3">
+        <el-tab-pane label="摄影作品" name="摄影作品">
           <div class="father-box">
             <div class="child-box">
               <div style="text-align: center;">
@@ -185,7 +184,7 @@
             </div>
           </div>
         </el-tab-pane>
-        <el-tab-pane label="获得证书" name="4">
+        <el-tab-pane label="获得证书" name="获得证书">
           <div class="father-box">
             <div class="child-box">
               <div style="text-align: center;">
@@ -211,7 +210,16 @@
     data () {
       return {
         tab_type: 1,
-        activeName: '1',
+        activeName: '我的主页',
+        descriptList:[
+          '1年PHP开发经验，曾在国内高新科技公司担任PHP开发工程师，' +
+          '主要负责为台湾foodomo外卖点餐平台的后台功能开发，' +
+          '在职期间多次同时接手多个项目，包括但不限于数据接口，' +
+          '后台功能模块，前端等的组件开发。',
+          
+          '对网站的前后端数据交互非常熟悉，可独自完成前后端开发工作和数据对接。',
+          
+        ],
         face:"http://qiniuyun.shankai.top/face2.jpeg",
         resume:"http://qiniuyun.shankai.top/殷善开简历.png",
         photographyList: [
@@ -307,11 +315,13 @@
     height: 260px;
     margin: 0 auto;
     color: #fff;
-    text-indent: 2em;
     margin-top: 30px;
     font-size: 18px;
     font-family: 微软雅黑;
     line-height: 32px;
+  }
+  .tab1-class p{
+    text-indent: 2em;
   }
   .tab2-class{
     width: 880px;
