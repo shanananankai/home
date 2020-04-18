@@ -55,16 +55,12 @@
                 </p>
               </div>
               <div class="tab2-class" v-if="tab_type == 2">
-                <i class="el-icon-paperclip" style="color: #fff"></i>&nbsp;<a href="http://wd.shankai.top" target="_blank">原生PHP5.6-企业站</a><br>
-                <i class="el-icon-paperclip" style="color: #fff"></i>&nbsp;<a href="http://jinhongji.shankai.top" target="_blank">原生PHP7.2-混合APP</a><br>
-                <i class="el-icon-paperclip" style="color: #fff"></i>&nbsp;<a href="http://ci.shankai.top" target="_blank">CI框架-播客项目</a><br>
+                <p v-for="(item,key) in project1" :key="key"><i class="el-icon-paperclip" style="color: #fff"></i>&nbsp;<a :href="item.url" target="_blank">{{item.name}}</a></p>
                 <br>
                 <span>注:(此处项目全部由个人独立开发,部分在工作中的项目无法进行展示,敬请谅解!)</span>
                </div>
               <div class="tab2-class" v-if="tab_type == 3">
-                <i class="el-icon-paperclip" style="color: #fff"></i>&nbsp;<a href="http://wq.shankai.top/" target="_blank">微擎</a><br>
-                <i class="el-icon-paperclip" style="color: #fff"></i>&nbsp;<a href="http://book.shankai.top/" target="_blank">爬虫</a><br>
-                <i class="el-icon-paperclip" style="color: #fff"></i>&nbsp;<a href="http://ng.shankai.top/admin/#!/admin/food" target="_blank">angular 后台项目</a><br>
+                <p v-for="(item,key) in project2" :key="key"><i class="el-icon-paperclip" style="color: #fff"></i>&nbsp;<a :href="item.url" target="_blank">{{item.name}}</a></p>
                 <br>
                 <span>注:(此处项目全部由个人独立开发,部分在工作中的项目无法进行展示,敬请谅解!)</span>
               </div>
@@ -222,6 +218,17 @@
         ],
         face:"https://qiniuyun.shankai.top/face2.jpeg",
         resume:"https://qiniuyun.shankai.top/殷善开简历.png",
+        project1:[
+          {name: '响应式官网', url:'http://layabox.shankai.top'},
+          {name: '原生PHP5.6-企业站', url:'http://wd.shankai.top'},
+          {name: '原生PHP7.2-混合APP', url:'http://jinhongji.shankai.top'},
+          {name: 'CI框架-播客项目', url:'http://ci.shankai.top'},
+        ],
+        project2:[
+          {name: '微擎', url:'http://wq.shankai.top'},
+          {name: '小说爬虫', url:'http://book.shankai.top'},
+          {name: 'angular 后台项目', url:'http://ng.shankai.top'},
+        ],
         photographyList: [
           'https://qiniuyun.shankai.top/4.webp',
           'https://qiniuyun.shankai.top/6.webp',
@@ -251,6 +258,9 @@
   body{
     margin: 0;
     background-color: #21242B;
+  }
+  p{
+    margin: 0;
   }
   .el-main {
     padding: 0;
