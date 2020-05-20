@@ -34,9 +34,9 @@
                 </el-image>
               </div>
               <div class="title" style="position: relative;">
-                <div><a href="javascript:;" @click="tab_type = 1">自我介紹</a></div>
-                <div><a href="javascript:;" @click="tab_type = 2">个人作品 ①</a></div>
-                <div><a href="javascript:;" @click="tab_type = 3">个人作品 ②</a></div>
+                <div><a href="javascript:;" @click="tab_type = 1">个人作品 ①</a></div>
+                <div><a href="javascript:;" @click="tab_type = 2">个人作品 ②</a></div>
+                <div><a href="javascript:;" @click="tab_type = 3">自我介紹</a></div>
                 <div><a href="javascript:;" @click="tab_type = 4">职业技能</a></div>
                 <div><a href="javascript:;" @click="tab_type = 5">技术栈</a></div>
                 <el-popover
@@ -49,20 +49,20 @@
                 </el-popover>
               </div>
               <div style="clear: both"></div>
-              <div class="tab1-class" style="text-indent: 0em;color: white;" v-if="tab_type == 1">
-                <p v-for="(descript,key) in descriptList" :key="key">
-                  {{descript}}
-                </p>
-              </div>
-              <div class="tab2-class" v-if="tab_type == 2">
+              <div class="tab2-class" v-if="tab_type == 1">
                 <p v-for="(item,key) in project1" :key="key"><i class="el-icon-paperclip" style="color: #fff"></i>&nbsp;<a :href="item.url" target="_blank">{{item.name}}</a></p>
                 <br>
                 <span>注:(此处项目全部由个人独立开发,部分在工作中的项目无法进行展示,敬请谅解!)</span>
                </div>
-              <div class="tab2-class" v-if="tab_type == 3">
+              <div class="tab2-class" v-if="tab_type == 2">
                 <p v-for="(item,key) in project2" :key="key"><i class="el-icon-paperclip" style="color: #fff"></i>&nbsp;<a :href="item.url" target="_blank">{{item.name}}</a></p>
                 <br>
                 <span>注:(此处项目全部由个人独立开发,部分在工作中的项目无法进行展示,敬请谅解!)</span>
+              </div>
+              <div class="tab1-class" style="text-indent: 0em;color: white;" v-if="tab_type == 3">
+                <p v-for="(descript,key) in descriptList" :key="key">
+                  {{descript}}
+                </p>
               </div>
               <div class="tab2-class" v-if="tab_type == 4">
                 ①  理解PHP面向对象开发，并能应用常用数据结构<br>
